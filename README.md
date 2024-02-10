@@ -21,6 +21,7 @@
 
 # How To Star Project
 
+ - copy .env.example to .env file
 ```bash
 ./start.sh
 
