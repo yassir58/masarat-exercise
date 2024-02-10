@@ -59,7 +59,7 @@ const Modal: React.FC<modalWrapperProps> = ({
         ></div>
         <div className="fixed z-50 flex h-full w-full items-center justify-center">
           <div
-            className={` fixed z-50 min-w-[50vw] min-h-[40vh]  max-h-[70vh] overflow-y-auto rounded-md  bg-white px-6 py-3`}
+            className={` fixed z-50 min-w-[70vw] min-h-[40vh]  max-h-[70vh] overflow-y-auto rounded-md  bg-white px-6 py-3`}
           >
             <div className="flex w-full items-center justify-end py-4">
               <RxCross1

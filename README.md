@@ -3,9 +3,12 @@
 
 # Features Implemented
 
- 
+- Fetch And display a list of posts
+- search for posts by keyword
+- login to you acount
+- delete a post
+- see post details 
 
- # Approach
 
 
 # Technologies 

@@ -30,3 +30,10 @@ type PostContext = {
     length?: number
     setDataLength?: (len:number) => void
 }
+
+type PostComment = {
+    id:number,
+    email: string,
+    name:string,
+    body:string
+}

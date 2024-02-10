@@ -7,6 +7,7 @@ import Card from "./Card";
 import { PostContext } from "~/lib/providers/PostProvider";
 import Modal from "./Modal";
 import SearchSection from "./SearchSection";
+import CardDetails from "./CardDetails";
 
 
 
@@ -34,26 +35,27 @@ const PostsScreen:React.FC = () => {
    
 
    
-    return (<div className="flex gap-4 justify-center items-center flex-col w-full h-full">
-        <div className="flex justify-between items-center w-[80%]">
-            <h1>Populare Posts</h1>
-        <Modal cardModal={false} value={"Search Posts"}>
+    return (<main className='flex w-full h-full justify-center items-center'>
+        <div className="flex gap-4 justify-center items-start flex-col w-[70%]">
+        <div className="flex justify-between items-center w-full">
+            <h1 className="text-[25px] text-darkNavy">Popular Posts</h1>
+        <Modal cardModal={false} value={"Search Posts"} variant="btn-link">
             <SearchSection posts={posts ?? []}/>
         </Modal>
         </div>
-        <div className='flex gap-2 flex-col justify-start items-start max-w-[70%] min-h-[60vh] max-h-[60vh] overflow-y-auto'>
+        <div className='flex gap-2 flex-col pr-4 pl-2 py-2  justify-start items-start max-w-[70%] min-h-[60vh] max-h-[60vh] overflow-y-auto'>
 
 {posts ?
 posts?.map ((item:Post, index:number)=> {
     if (index >= paginationStart && index < (paginationStart + paginationSkip))
-        return <Card post={item} key={index} />
+        return <Card post={item} />
 })
 : ''}
 </div>
-<div className='flex max-w-[70%] w-full justify-between items-center'>
+<div className='flex  w-full justify-between items-center'>
 <div className='flex gap-4 justify-center items-center'>
-    <button onClick={prevPage}>prev</button>
-    <button onClick={nextPage}>next</button>
+    <button className="primary-btn" onClick={prevPage}>prev</button>
+    <button className="primary-btn" onClick={nextPage}>next</button>
 </div>
 
 <div className='flex gap-4 '>
@@ -70,7 +72,8 @@ posts?.map ((item:Post, index:number)=> {
 </select>
 </div>
 </div>
-    </div>)
+    </div>
+    </main>)
 }
 
 export default PostsScreen

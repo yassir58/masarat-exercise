@@ -5,6 +5,8 @@ import axios from "axios"
 import toast from "react-hot-toast"
 import { useContext } from "react"
 import { PostContext } from "~/lib/providers/PostProvider"
+import Modal from "./Modal"
+import CardDetails from "./CardDetails"
 interface CardProps {
     post:Post
 }
@@ -18,7 +20,7 @@ const Card:React.FC<CardProps> = ({post}) => {
         setPosts?.(filtered);      
         toast.success ('Post Deleted Successfully');
     }
-    return (<div className='flex flex-col justify-start items-start min-w-[60vw] gap-4 shadow-sm rounded-md p-4'>
+    return (<div className='flex flex-col justify-start items-start active:ring-2 active:ring-mainPurple focus:ring-2 focus:ring-mainPurple hover:ring-2 hover:ring-mainPurple w-[650px] gap-4 shadow-sm rounded-md p-4'>
         <h1 className='text-[20px] text-veryDarkGray'>{post.title}</h1>
         <div className='flex justify-between items-center w-full'>
         <div className='flex justify-start items-center gap-6'>
@@ -27,9 +29,14 @@ const Card:React.FC<CardProps> = ({post}) => {
             <p className="text-mediumGray"><span className='font-semibold text-darkNavy'>words:</span> {countWords (post.body)}</p>
         </div>
 
-        <button className='' onClick={()=> {
+       <div className="flex gap-4 justify-center items-center">
+       <button className='button-danger' onClick={()=> {
             deletePost (post.id)
         }}>delete</button>
+        <Modal cardModal={false} value={"See Details"} variant="btn-link">
+            <CardDetails post={post} />
+        </Modal>
+       </div>
         </div>
     </div>)
 }

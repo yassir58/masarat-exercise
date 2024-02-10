@@ -15,9 +15,9 @@ const SearchSection:React.FC<Props> = ({posts}) => {
         const filtered = temp.filter (post => post.title.includes (keyword));
         setList (filtered)
     }
-    return <div className='flex flex-col gap-4 justify-center items-start'>
-        <input className="regular-input" value={searchKeyword} onChange={(e) => filterPosts (e.target.value)} placeholder="Search for post by keyword" />
-        <div className='flex gap-2 flex-col justify-start items-start max-w-[70%] min-h-[60vh] max-h-[60vh] overflow-y-auto'>
+    return <div className='flex flex-col gap-4 justify-center items-center w-full h-full'>
+        <input className="input-regular w-[80%]" value={searchKeyword} onChange={(e) => filterPosts (e.target.value)} placeholder="Search for post by keyword" />
+        <div className='flex gap-2 flex-col justify-start items-start max-w-[70%] min-h-[60vh] max-h-[60vh] overflow-y-auto p-4'>
 
 {list ?
 list?.map ((item:Post, index:number)=> {

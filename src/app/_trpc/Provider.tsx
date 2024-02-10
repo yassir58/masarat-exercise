@@ -5,7 +5,6 @@ import { trpc } from "./client";
 import { httpBatchLink } from "@trpc/client";
 import { SessionProvider } from "next-auth/react";
 
-export const keyBoardContext = createContext<KeyboardContext> ({})
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient({}));

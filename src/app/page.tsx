@@ -11,8 +11,8 @@ export default async function Home() {
     redirect ('/login')
   return (
     <div className="flex h-[100vh] w-[100vw] items-center justify-center flex-col gap-8">
-      <p>
-        Welcome To Home Page
+      <p className='p-4 text-darkNavy text-[22px]'>
+        Welcome  <span className='text-mainPurple font-semibold'>{session?.user?.name}</span>
       </p>
      <PostProvider>
         <PostsScreen/>
