@@ -24,6 +24,3 @@
  - copy .env.example to .env file
 ```bash
 ./start.sh
-
-
-# wordle-game
